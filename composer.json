@@ -17,7 +17,7 @@
         "social login button"
     ],
     "require": {
-        "collab/module-customer-password-less-login": "1.0.*",
+        "collab/module-customer-passwordless-login": "1.0.*",
         "google/apiclient": "^2.0",
         "magento/framework": "*"
     },
