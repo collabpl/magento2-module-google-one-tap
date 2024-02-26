@@ -8,6 +8,12 @@ module to create an account or login the user without the need of a password.
 Initially module adds the button to the login form only. It is possible to add the button to any other place
 by following the instructions in the [Basic usage](#basic-usage) section.
 
+
+## Prerequistes
+- client_id for Google API obtained by this [manual](https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid)
+- tld domain which controlls Your Magento application, on local environment ONLY app running under http(s)://localhost will work (domain needs to be configured within Google's Project in Authorized JavaScript origins field. 
+
+
 ## Basic usage
 Once You will define desired layout handler just edit it's XML file and add the following code under `<page>` node:
 ```xml
@@ -26,8 +32,9 @@ Then You can add the button to any place in the layout by referencing desired bl
 </referenceContainer>
 ```
 
+
 ## Installation details
 ```bash
-composer collab/module-google-one-tap
+composer req collab/module-google-one-tap
 bin/magento setup:upgrade
 ```
