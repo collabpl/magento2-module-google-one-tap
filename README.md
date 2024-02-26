@@ -10,8 +10,9 @@ by following the instructions in the [Basic usage](#basic-usage) section.
 
 
 ## Prerequistes
-- client_id for Google API obtained by this [manual](https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid)
-- tld domain which controlls Your Magento application, on local environment ONLY app running under http(s)://localhost will work (domain needs to be configured within Google's Project in Authorized JavaScript origins field. 
+- `client_id` for Google API obtained by this [manual](https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid)
+- tld domain which controlls Your Magento application, on local environment ONLY app running under `http(s)://localhost` will work (domain needs to be configured within Google's Project in Authorized JavaScript origins field.
+- once `client_id` is generated and obtained it needs to be set up at Magento in Stores -> Configuration -> Collab Extensions -> Google One Tap
 
 
 ## Basic usage
