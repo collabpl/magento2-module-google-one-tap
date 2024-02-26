@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Collab GoogleOneTap for Magento
+ *
+ * @author      Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+ * @copyright   Copyright 2024 Collab
+ * @license     Open Source License (OSL v3)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="collab_googleaccount_script"/>
+    <body>
+        <referenceContainer name="collab.login.container">
+            <block name="collab.googleonetap.button"
+                   template="Collab_GoogleOneTap::button/google.phtml"
+                   before="-"
+                   ifconfig="collab_googleonetap/general/enabled">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

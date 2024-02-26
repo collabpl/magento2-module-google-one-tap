@@ -1,0 +1,36 @@
+<?php
+/**
+ * @category  Collab
+ * @package   Collab\GoogleOneTap
+ * @author    Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+ * @copyright 2024 Collab
+ * @license   MIT
+ */
+
+/** @var Template $block */
+/** @var SecureHtmlRenderer $secureRenderer */
+
+use Collab\GoogleOneTap\ViewModel\GoogleOneTapConfig;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+
+/** @var GoogleOneTapConfig $viewModel */
+$viewModel = $block->getViewModel();
+$formKey = $viewModel->getFormKey();
+$postAuthUrl = $viewModel->getCallbackUrl();
+$clientId = $viewModel->getClientId();
+?>
+
+<div id="g_id_onload"
+     data-client_id="<?= /** @noEscape  */ $clientId ?>"
+     data-login_uri="<?= /** @noEscape  */ $postAuthUrl ?>"
+     data-form_key="<?= /** @noEscape  */ $formKey ?>"
+     data-auto_prompt="false"
+     data-context="use">
+</div>
+
+<?= /* @noEscape */ $secureRenderer->renderTag(
+    'script',
+    ['src' => 'https://accounts.google.com/gsi/client', 'async' => 'async', 'defer' => 'defer'],
+    false)
+?>
