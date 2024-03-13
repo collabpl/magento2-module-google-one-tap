@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 1.0.1 CHANGELOG.md introduction.
 
 ### Changed
+- 1.0.1 acl.xml fix.
 
 [unreleased]: https://github.com/collabpl/magento2-module-google-one-tap/compare/1.0.0...HEAD
 [1.0.0]: https://github.com/collabpl/magento2-module-google-one-tap/releases/tag/1.0.0
