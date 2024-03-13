@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Collab\GoogleOneTap\Controller\Index;
 
 use Collab\CustomerPasswordLessLogin\Service\LoginWithoutPassword;
+use Collab\GoogleOneTap\Api\Data\ConfigInterface;
 use Collab\GoogleOneTap\Service\GoogleApiClient;
 use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\HttpPostActionInterface;
@@ -23,6 +24,7 @@ use Magento\Framework\Message\ManagerInterface;
 class Index implements HttpPostActionInterface
 {
     public function __construct(
+        protected ConfigInterface $config,
         protected GoogleApiClient $googleApiClient,
         protected RequestInterface $request,
         protected ResultFactory $resultFactory,
@@ -37,8 +39,10 @@ class Index implements HttpPostActionInterface
         $credential = $this->request->getParam('credential');
         $payload = $this->googleApiClient->getUserInfo($credential);
 
-        if (!count($payload)) {
-            $this->messageManager->addErrorMessage(__('Invalid credentials.'));
+        $csrfToken = $this->request->getParam('form_key');
+
+        if (!count($payload) || $csrfToken !== $this->config->getFormKey()) {
+            $this->messageManager->addErrorMessage(__('Invalid credentials or expired form key. Please try again...'));
         } else {
             $this->loginWithoutPassword->login([
                 'email' => $payload['email'],
@@ -49,6 +53,8 @@ class Index implements HttpPostActionInterface
             $this->messageManager->addSuccessMessage(__('You have been successfully logged in.'));
         }
 
-        return $this->resultFactory->create(ResultFactory::TYPE_REDIRECT)->setPath($this->customerSession->getBeforeAuthUrl());
+        return $this->resultFactory->create(
+            ResultFactory::TYPE_REDIRECT
+        )->setPath($this->customerSession->getBeforeAuthUrl());
     }
 }

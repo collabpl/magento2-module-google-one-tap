@@ -19,4 +19,5 @@ interface ConfigInterface
 
     public function isEnabled(): bool;
     public function getClientId(): ?string;
+    public function getFormKey(): string;
 }

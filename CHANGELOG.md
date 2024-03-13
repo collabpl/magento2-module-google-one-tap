@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 1.0.1 FedCM support (https://developers.google.com/identity/gsi/web/reference/html-reference#data-use_fedcm_for_prompt).
 - 1.0.1 CHANGELOG.md introduction.
+- 1.0.1 Formkey validation.
 
 ### Changed
 - 1.0.1 acl.xml fix.

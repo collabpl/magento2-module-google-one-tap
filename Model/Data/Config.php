@@ -13,8 +13,10 @@ namespace Collab\GoogleOneTap\Model\Data;
 
 use Collab\GoogleOneTap\Api\Data\ConfigInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Data\Form\FormKey as CsrfFormKey;
 use Magento\Framework\DataObject;
 use Magento\Framework\Encryption\EncryptorInterface;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Store\Model\ScopeInterface;
 
 class Config extends DataObject implements ConfigInterface
@@ -23,6 +25,7 @@ class Config extends DataObject implements ConfigInterface
     public function __construct(
         protected ScopeConfigInterface $scopeConfig,
         protected EncryptorInterface $encryptor,
+        protected CsrfFormKey $formKey,
         array $data = []
     ) {
         parent::__construct($data);
@@ -44,5 +47,13 @@ class Config extends DataObject implements ConfigInterface
                 ScopeInterface::SCOPE_STORE
             )
         );
+    }
+
+    /**
+     * @throws LocalizedException
+     */
+    public function getFormKey(): string
+    {
+        return $this->formKey->getFormKey();
     }
 }
