@@ -1,6 +1,4 @@
 <?php
-
-declare(strict_types=1);
 /**
  * @category  Collab
  * @package   Collab\GoogleOneTap
@@ -8,6 +6,8 @@ declare(strict_types=1);
  * @copyright 2024 Collab
  * @license   MIT
  */
+
+declare(strict_types=1);
 
 namespace Collab\GoogleOneTap\Service;
 
