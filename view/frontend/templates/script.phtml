@@ -27,11 +27,26 @@ $clientId = $viewModel->getClientId();
      data-form_key="<?= /** @noEscape  */ $formKey ?>"
      data-use_fedcm_for_prompt="true"
      data-auto_prompt="false"
+     data-ux_mode="popup"
      data-context="use">
 </div>
 
-<?= /* @noEscape */ $secureRenderer->renderTag(
-    'script',
-    ['src' => 'https://accounts.google.com/gsi/client', 'async' => 'async', 'defer' => 'defer'],
-    false)
+<?php
+$scriptString = <<<SCRIPT
+(events => {
+    const loadOneTapJs = () => {
+        events.forEach(type => window.removeEventListener(type, loadOneTapJs))
+        element = document.createElement('script');
+        scriptTag = document.getElementsByTagName('script')[0];
+
+        element.async = true;
+        element.src = 'https://accounts.google.com/gsi/client';
+
+        scriptTag.parentNode.insertBefore(element, scriptTag);
+    };
+    events.forEach(type => window.addEventListener(type, loadOneTapJs, {once: true, passive: true}))
+})(['touchstart', 'mouseover', 'wheel', 'scroll', 'keydown'])
+SCRIPT;
 ?>
+
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>

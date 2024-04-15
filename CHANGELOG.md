@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 1.0.1 - 2024-04-15
+
 ### Added
 
 - 1.0.1 FedCM support (https://developers.google.com/identity/gsi/web/reference/html-reference#data-use_fedcm_for_prompt).
 - 1.0.1 CHANGELOG.md introduction.
 - 1.0.1 Formkey validation.
+- 1.0.1 Changed the way that main js file is added to website - first user interaction is detected.
 
 ### Changed
 - 1.0.1 acl.xml fix.

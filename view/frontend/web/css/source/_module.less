@@ -1,0 +1,28 @@
+// /**
+//  * @category  Collab
+//  * @package   Collab\GoogleOneTap
+//  * @author    Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+//  * @copyright 2024 Collab
+//  * @license   MIT
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+@color-gainsboro: #dadce0;
+@google-login-logo-width: 18px;
+@google-login-logo-border__radius: 50%;
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+    .g_id_signin {
+        &_placeholder {
+            width: @google-login-logo-width;
+            padding: @indent__s;
+            border: 1px solid @color-gainsboro;
+            border-radius: @google-login-logo-border__radius;
+        }
+    }
+}

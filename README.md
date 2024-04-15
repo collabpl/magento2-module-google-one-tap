@@ -9,6 +9,20 @@ Initially module adds the button to the login form only. It is possible to add t
 by following the instructions in the [Basic usage](#basic-usage) section.
 
 
+## Why choose this extension over other solutions?
+We don't believe in efficient modules which have tons of options - simple as that - modules which have multiple 
+options, are prepared for many integrations always have some performance footprint for application. Having this
+in mind we are trying to provide simple, portable and independent modules which require some basic Magento 2 development
+skills.
+
+
+## PageSpeed
+The way that loading external scripts is realized by this module shoudn't by any means impact Your PageSpeed score.
+As google's script which is essential for providing login functionality is not something that we need to include while
+rendering the site we are embedding necessary scripts only where it is needed and only after first user interaction
+so no client resources are used on initial page load.
+
+
 ## Prerequistes
 - `client_id` for Google API obtained by this [manual](https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid)
 - tld domain which controlls Your Magento application, on local environment ONLY app running under `http(s)://localhost` will work (domain needs to be configured within Google's Project in Authorized JavaScript origins field.
