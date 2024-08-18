@@ -1,0 +1,23 @@
+{
+  "name": "magento2-module-google-one-tap",
+  "version": "1.0.0",
+  "description": "The Collab_GoogleOneTap gives customers the ability to sign in to your website quickly and securely  using their Google account. It is a secure and easy way to log in to your website without the need to remember a password. Module utilizes [Collab_CustomerPasswordLessLogin](https://github.com/collabpl/magento2-module-customer-passwordless-login)  module to create an account or login the user without the need of a password.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collabpl/magento2-module-google-one-tap.git"
+  },
+  "author": "Marcin Jędrzejewski <m.jedrzejewski@collab.pl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/collabpl/magento2-module-google-one-tap/issues"
+  },
+  "homepage": "https://github.com/collabpl/magento2-module-google-one-tap#readme",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-uglify": "^5.2.2"
+  }
+}

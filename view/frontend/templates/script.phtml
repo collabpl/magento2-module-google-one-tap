@@ -33,19 +33,7 @@ $clientId = $viewModel->getClientId();
 
 <?php
 $scriptString = <<<SCRIPT
-(events => {
-    const loadOneTapJs = () => {
-        events.forEach(type => window.removeEventListener(type, loadOneTapJs))
-        element = document.createElement('script');
-        scriptTag = document.getElementsByTagName('script')[0];
-
-        element.async = true;
-        element.src = 'https://accounts.google.com/gsi/client';
-
-        scriptTag.parentNode.insertBefore(element, scriptTag);
-    };
-    events.forEach(type => window.addEventListener(type, loadOneTapJs, {once: true, passive: true}))
-})(['touchstart', 'mouseover', 'wheel', 'scroll', 'keydown'])
+(e=>{let t=()=>{e.forEach(e=>window.removeEventListener(e,t)),element=document.createElement("script"),scriptTag=document.getElementsByTagName("script")[0],element.async=!0,element.src="https://accounts.google.com/gsi/client",scriptTag.parentNode.insertBefore(element,scriptTag)};e.forEach(e=>window.addEventListener(e,t,{once:!0,passive:!0}))})(["touchstart","mouseover","wheel","scroll","keydown"]);
 SCRIPT;
 ?>
 

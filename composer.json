@@ -1,6 +1,6 @@
 {
     "name": "collab/module-google-one-tap",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Magento 2 module which provides ability to login using Google One Tap",
     "type": "magento2-module",
     "authors": [
@@ -19,7 +19,7 @@
     "require": {
         "collab/module-customer-passwordless-login": "1.0.*",
         "google/apiclient": "^2.0",
-        "magento/framework": "*"
+        "magento/framework": "~103.0.0"
     },
     "license": [
         "MIT"
