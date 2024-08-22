@@ -33,7 +33,7 @@ $clientId = $viewModel->getClientId();
 
 <?php
 $scriptString = <<<SCRIPT
-(e=>{let t=()=>{e.forEach(e=>window.removeEventListener(e,t)),element=document.createElement("script"),scriptTag=document.getElementsByTagName("script")[0],element.async=!0,element.src="https://accounts.google.com/gsi/client",scriptTag.parentNode.insertBefore(element,scriptTag)};e.forEach(e=>window.addEventListener(e,t,{once:!0,passive:!0}))})(["load","touchstart","mouseover","wheel","scroll","keydown"]);
+(t=>{let n=e=>{t.forEach(e=>window.removeEventListener(e,n)),element=document.createElement("script"),scriptTag=document.getElementsByTagName("script")[0],element.async=!0,element.src="https://accounts.google.com/gsi/client",scriptTag.parentNode.insertBefore(element,scriptTag)};t.forEach(e=>window.addEventListener(e,n,{once:!0,passive:!0}))})(["load"]);
 SCRIPT;
 ?>
 
