@@ -1,6 +1,5 @@
 {
     "name": "collab/module-google-one-tap",
-    "version": "1.0.2",
     "description": "A Magento 2 module which provides ability to login using Google One Tap",
     "type": "magento2-module",
     "authors": [
